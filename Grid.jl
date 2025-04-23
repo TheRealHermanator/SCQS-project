@@ -20,7 +20,7 @@ Calculate the Tensor Renormalization Group (TRG) data based on the values of (a/
 """
 function compute_TRG_data(ac_val, bc_val, ntruncdim=16, nmaxiter=25)
     T = six_vertex_tensor(ac_val, bc_val, 1)  # sixvertex(a=ac_val, b=bc_val, c=1) # six_vertex_tensor(ac_val, bc_val, 1)
-    scheme = TRG(T)
+    scheme = BTRG(T)
     data = run!(scheme, truncdim(ntruncdim), maxiter(nmaxiter); verbosity=1)
     return data
 end
