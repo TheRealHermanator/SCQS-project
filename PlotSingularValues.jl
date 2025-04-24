@@ -8,7 +8,8 @@ include("ModifiedTRGflow.jl")
 
 # Variables
 nmaxiter = 25
-
+a = 1.5
+b = 1.5
 
 
 function compute_TRG_data_sing(ac_val, bc_val; ntruncdim=16, nmaxiter=nmaxiter)
@@ -18,7 +19,7 @@ function compute_TRG_data_sing(ac_val, bc_val; ntruncdim=16, nmaxiter=nmaxiter)
     return data, sing
 end
 
-data, sing = compute_TRG_data_sing(1.5, 1.5; ntruncdim=16, nmaxiter=25)
+data, sing = compute_TRG_data_sing(a, b; ntruncdim=16, nmaxiter=25)
 
 
 # Prepare data for scatter plot
@@ -27,16 +28,23 @@ y = Float64[]
 
 for i in 1:nmaxiter-1
     svals = values(sing[i])[1]  # Extract the singular values for the i-th iteration
+    maxval = maximum(svals)
     for val in svals
         push!(x, i)              # Store the iteration index
-        push!(y, val)            # Store the singular value
+        push!(y, val / maxval)            # Store the singular value
     end
 end
 
 # Scatter plot
-scatter(x, y,
+plt = scatter(x, y,
     xlabel = "Iteration",
     ylabel = "Singular value",
     title = "Singular values over iterations (log scale)",
     yscale = :log10,
-    legend = false)
+    legend = false,
+    )
+
+ylims!(5e-3, 1.5e+0)
+
+
+display(plt)
