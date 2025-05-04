@@ -3,7 +3,7 @@ using Plots
 using TNRKit
 using TensorKit
 include("6VertexModel.jl")
-include("SModifiedTRGflow.jl")
+include("ModifiedTRGflow.jl")
 
 
 # Variables
