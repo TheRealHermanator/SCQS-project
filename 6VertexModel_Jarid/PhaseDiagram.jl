@@ -38,20 +38,20 @@ ac_vals_2diff, bc_vals_2diff, lnz_grid_2diff = get_gradient(ac_vals_1diff, bc_va
 
 
 if typeplot == 0
-    plt = heatmap(bc_vals, ac_vals, lnz_grid;
-        xlabel="b/c", ylabel="a/c", title="ln(Z) Energy per Site",
+    plt = heatmap(ac_vals, bc_vals, lnz_grid;
+        xlabel="a/c", ylabel="b/c", title="ln(Z) Energy per Site",
         colorbar_title="ln(Z)", aspect_ratio=:equal)
     display(plt)
     savefig(plt, "Plots/Phase_len$(len)_dif$typeplot.png")
 elseif typeplot == 1
-    plt = heatmap(bc_vals_1diff, ac_vals_1diff, lnz_grid_1diff;
-        xlabel="b/c", ylabel="a/c", title="1st Derivative ln(Z) Energy per Site",
+    plt = heatmap(ac_vals_1diff, bc_vals_1diff, lnz_grid_1diff;
+        xlabel="a/c", ylabel="b/c", title="1st Derivative ln(Z) Energy per Site",
         colorbar_title="|∇ln(Z)|", aspect_ratio=:equal)
     display(plt)
     savefig(plt, "Plots/Phase_len$(len)_dif$typeplot.png")
 elseif typeplot == 2
-    plt = heatmap(bc_vals_2diff, ac_vals_2diff, lnz_grid_2diff;
-        xlabel="b/c", ylabel="a/c", title="2nd Derivative ln(Z) Energy per Site",
+    plt = heatmap(ac_vals_2diff, bc_vals_2diff, lnz_grid_2diff;
+        xlabel="a/c", ylabel="b/c", title="2nd Derivative ln(Z) Energy per Site",
         colorbar_title="|∇²ln(Z)|", aspect_ratio=:equal)
     display(plt)
     savefig(plt, "Plots/Phase_len$(len)_dif$typeplot.png")
