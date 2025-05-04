@@ -6,6 +6,7 @@ include("6VertexModel.jl")
 include("ModifiedTRGflow.jl")
 
 
+
 # Variables
 nmaxiter = 20 #since the SV's become rubbish after 25th iteration
 as = [0.25, 0.25, 1, 1.5]
@@ -18,6 +19,7 @@ function compute_TRG_data_cft(ac_val, bc_val; ntruncdim=16, nmaxiter=nmaxiter)
     data = run!(scheme, truncdim(ntruncdim), maxiter(nmaxiter); verbosity=1)
     return data
 end
+
 for i in range(1,4)
     a = as[i]
     b = bs[i]
@@ -33,7 +35,12 @@ for i in range(1,4)
         end
     end
     
+
     # Plot as scatter
-    scatter(xs, ys, xlabel="Renormalisation Step", ylabel="λn(L)/λ0(L)", title="Eigenvalues for Δ=$delta in phase $fil")
+    scatter(xs, ys, xlabel="Iteration", ylabel="λn(L)/λ0(L)", title="Eigenvalues for Δ=$delta in phase $fil", legend=false)
     savefig("CFT_$fil.png")      
+
+    # Save data
+    writedlm("6VertexModel_Jonas/Data/iteration_$fil.csv", xs)
+    writedlm("6VertexModel_Jonas/Data/cft_$fil.csv", ys)
 end

@@ -26,9 +26,9 @@ end
 len = 101
 typeplot = 2 # 0: ln(Z), 1: 1st derivative, 2: 2nd derivative
 
-ac_vals = readdlm("Data/ac_vals_$len.csv")[:]
-bc_vals = readdlm("Data/bc_vals_$len.csv")[:]
-lnz_grid = readdlm("Data/lnZ_$len.csv")
+ac_vals = readdlm("6VertexModel_Jarid/Data/ac_vals_$len.csv")[:]
+bc_vals = readdlm("6VertexModel_Jarid/Data/bc_vals_$len.csv")[:]
+lnz_grid = readdlm("6VertexModel_Jarid/Data/lnZ_$len.csv")
 
 # 1st derivative
 ac_vals_1diff, bc_vals_1diff, lnz_grid_1diff = get_gradient(ac_vals, bc_vals, lnz_grid)
@@ -39,20 +39,20 @@ ac_vals_2diff, bc_vals_2diff, lnz_grid_2diff = get_gradient(ac_vals_1diff, bc_va
 
 if typeplot == 0
     plt = heatmap(ac_vals, bc_vals, lnz_grid;
-        xlabel="a/c", ylabel="b/c", title="ln(Z) Energy per Site",
+        xlabel="a/c", ylabel="b/c", title="ln(Z) per site",
         colorbar_title="ln(Z)", aspect_ratio=:equal)
     display(plt)
-    savefig(plt, "Plots/Phase_len$(len)_dif$typeplot.png")
+    savefig(plt, "6VertexModel_Jarid/Plots/Phase_len$(len)_dif$typeplot.png")
 elseif typeplot == 1
     plt = heatmap(ac_vals_1diff, bc_vals_1diff, lnz_grid_1diff;
-        xlabel="a/c", ylabel="b/c", title="1st Derivative ln(Z) Energy per Site",
+        xlabel="a/c", ylabel="b/c", title="1st Derivative ln(Z) per site",
         colorbar_title="|∇ln(Z)|", aspect_ratio=:equal)
     display(plt)
-    savefig(plt, "Plots/Phase_len$(len)_dif$typeplot.png")
+    savefig(plt, "6VertexModel_Jarid/Plots/Phase_len$(len)_dif$typeplot.png")
 elseif typeplot == 2
     plt = heatmap(ac_vals_2diff, bc_vals_2diff, lnz_grid_2diff;
-        xlabel="a/c", ylabel="b/c", title="2nd Derivative ln(Z) Energy per Site",
+        xlabel="a/c", ylabel="b/c", title="2nd Derivative ln(Z) per site",
         colorbar_title="|∇²ln(Z)|", aspect_ratio=:equal)
     display(plt)
-    savefig(plt, "Plots/Phase_len$(len)_dif$typeplot.png")
+    savefig(plt, "6VertexModel_Jarid/Plots/Phase_len$(len)_dif$typeplot.png")
 end

@@ -93,9 +93,9 @@ bc_vals = range(0.01, 1.99; length=len)
 lnz_grid = get_lnZ_grid(ac_vals, bc_vals, ntruncdim, nmaxiter)
 
 # Store the computed data to CSV files
-writedlm("Data/ac_vals_$len.csv", ac_vals)
-writedlm("Data/bc_vals_$len.csv", bc_vals)
-writedlm("Data/lnZ_$len.csv", lnz_grid)
+writedlm("6VertexModel_Jarid/Data/ac_vals_$len.csv", ac_vals)
+writedlm("6VertexModel_Jarid/Data/bc_vals_$len.csv", bc_vals)
+writedlm("6VertexModel_Jarid/Data/lnZ_$len.csv", lnz_grid)
 
 # Generate a heatmap of ln(Z) values
 heatmap(bc_vals, ac_vals, lnz_grid;
