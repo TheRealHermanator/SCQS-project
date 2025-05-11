@@ -95,10 +95,13 @@ function degeneracy(vec)
         return l_min, l_max, deg_min, deg_max, rest
     end
 end
+
+
  """
  The code below generates scatter plots for the transfer matrix eigenvalues
  for different phases of the six-vertex model. 
  """
+ 
 for i in range(1,4)
     a = as[i]
     b = bs[i]

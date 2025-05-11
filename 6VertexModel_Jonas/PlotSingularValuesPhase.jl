@@ -6,7 +6,7 @@ include("6VertexModel.jl")
 include("ModifiedTRGflow.jl")
 
 # Variables
-nmaxiter = 15
+nmaxiter = 20
 as_1 = LinRange(0.1, 0.5, 5)
 as_2 = LinRange(0.6, 1.0, 5)
 b = 1.5 #such that we have a phase transition for a = 0.5 (delta = 1)
@@ -68,4 +68,4 @@ annotate!(0.3, 1.5, "\$∆ > 1\$")
 annotate!(0.5, 1.5, "\$∆ = 1\$")
 annotate!(0.8, 1.5, "\$∆ < 1\$")
 ylims!(5e-3, 2e+0)
-savefig(plt, "SVs delta")
+savefig(plt, "SVs delta iter $nmaxiter")
