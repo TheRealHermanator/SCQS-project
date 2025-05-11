@@ -83,7 +83,7 @@ end
 # Constants for the computation
 ntruncdim = 16  # Truncation dimension for the TRG algorithm
 nmaxiter = 20   # Maximum number of iterations for the TRG algorithm
-len = 5         # Number of points in the range for a/c and b/c
+len = 200         # Number of points in the range for a/c and b/c
 
 # Define the range of a/c and b/c values
 ac_vals = range(0.01, 1.99; length=len)
