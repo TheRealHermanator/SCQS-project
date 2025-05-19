@@ -9,6 +9,7 @@ Welcome to our repository for the Tensor Network Renormalization (TNR) project, 
 # 📂 Repository Structure
 
 🔬 **Benchmarking**
+
 Contains code for benchmarking TRG, BTRG, and HOTRG with respect to:
 
 -	Efficiency (runtime, memory usage)
