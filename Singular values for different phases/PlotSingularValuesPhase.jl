@@ -6,12 +6,13 @@ include("6VertexModel.jl")
 include("ModifiedTRGflow.jl")
 
 # Variables
-nmaxiter = 20
+nmaxiter = 15
 as_1 = LinRange(0.1, 0.5, 5)
 as_2 = LinRange(0.6, 1.0, 5)
 b = 1.5 #such that we have a phase transition for a = 0.5 (delta = 1)
 x = Float64[]
 y = Float64[]
+resolution = 1e-4
 
 function compute_TRG_data_sing(ac_val, bc_val; ntruncdim=16, nmaxiter=nmaxiter)
     T = six_vertex_tensor(ac_val, bc_val, 1)  # sixvertex(a=ac_val, b=bc_val, c=1) # six_vertex_tensor(ac_val, bc_val, 1)
@@ -38,7 +39,7 @@ for a in as_1
     maxval = maximum(svals)
     deg = 0
     for val in svals
-        if abs(val-maxval)<1e-5
+        if abs(val-maxval)<resolution
             deg +=1
         else
             scatter!((a, val/maxval), markercolor=:grey)
@@ -47,7 +48,7 @@ for a in as_1
     end
     if deg>1
         scatter!((a, 1), markercolor=:blue, markershape=:star5)
-        annotate!((a-0.05, 1-0.2), "$deg")
+        annotate!((a-0.03, 1-0.17), "$deg")
     else
         scatter!((a, 1), markercolor=:blue)
     end

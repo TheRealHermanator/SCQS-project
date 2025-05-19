@@ -6,6 +6,7 @@ using LaTeXStrings
 include("6VertexModel.jl")
 include("ModifiedTRGflow.jl")
 # Variables
+resolution = 1e-3
 nmaxiter = 20 #since the SV's become rubbish after 25th iteration
 as = [0.25, 0.25, 1, 1.5]
 bs = [0.25, 1.5, 1, 0.25]
@@ -63,7 +64,7 @@ function degeneracy(vec)
         min_val, max_val = vec_sort[1], vec_sort[2]
         l_min, l_max = exp(-2π * min_val), exp(-2π * max_val)
 
-        if abs(l_min - l_max) < 1e-8
+        if abs(l_min - l_max) < resolution
             # They're effectively the same value
             if l_min >0.5 #then it's a maximum at that iteration
                 return -1, l_min, 0, 2, Float64[] #-1 to scatter outside the view
@@ -83,9 +84,9 @@ function degeneracy(vec)
 
         for i in 2:l-1  # skip vec_sort[1] and vec_sort[end]
             lambda_i = exp(-2π * vec_sort[i])
-            if abs(lambda_i - l_min) < 1e-3 #then it's one of the degenerate minima
+            if abs(lambda_i - l_min) < resolution #then it's one of the degenerate minima
                 deg_min += 1
-            elseif abs(lambda_i - l_max) <  1e-3 #then it's one of the degenerate maxima
+            elseif abs(lambda_i - l_max) <  resolution #then it's one of the degenerate maxima
                 deg_max += 1
             else #it's a separate point and can be plotted as such
                 push!(rest, lambda_i)
@@ -101,7 +102,7 @@ end
  The code below generates scatter plots for the transfer matrix eigenvalues
  for different phases of the six-vertex model. 
  """
- 
+
 for i in range(1,4)
     a = as[i]
     b = bs[i]
@@ -119,13 +120,13 @@ for i in range(1,4)
         l_min, l_max, deg_min, deg_max, rest = degeneracy( vec)
         if deg_min>1
             scatter!(plt,(j, l_min), markershape=:star5, markercolor=:red)
-            annotate!(j, l_min+0.1, "$deg_min")
+            annotate!(j, l_min-0.1, "$deg_min", fontsize=8)
         else
             scatter!(plt, (j, l_min), markercolor=:red)
         end
         if deg_max>1
             scatter!(plt, (j, l_max),markershape=:star5, markercolor=:blue)
-            annotate!(j, l_max -0.1, "$deg_max", markercolor=:blue)
+            annotate!(j, l_max -0.1, "$deg_max", markercolor=:blue, fontsize=8)
         else
             scatter!(plt, (j, l_max), markercolor=:blue)
         end

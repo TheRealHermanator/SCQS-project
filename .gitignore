@@ -79,3 +79,61 @@ savedfig.png
 SVs delta iter 10.png
 SVs delta iter 15.png
 SVs delta iter 20.png
+SVs delta iter 5.png
+Phase diagram/Data/ac_vals_2.csv
+Phase diagram/Data/ac_vals_5.csv
+Phase diagram/Data/ac_vals_6.csv
+Phase diagram/Data/ac_vals_10.csv
+Phase diagram/Data/ac_vals_20.csv
+Phase diagram/Data/ac_vals_50.csv
+Phase diagram/Data/ac_vals_51.csv
+Phase diagram/Data/ac_vals_100.csv
+Phase diagram/Data/ac_vals_101.csv
+Phase diagram/Data/bc_vals_2.csv
+Phase diagram/Data/bc_vals_5.csv
+Phase diagram/Data/bc_vals_6.csv
+Phase diagram/Data/bc_vals_10.csv
+Phase diagram/Data/bc_vals_20.csv
+Phase diagram/Data/bc_vals_50.csv
+Phase diagram/Data/bc_vals_51.csv
+Phase diagram/Data/bc_vals_100.csv
+Phase diagram/Data/bc_vals_101.csv
+Phase diagram/Data/lnZ_2.csv
+Phase diagram/Data/lnZ_5_MyVersion.csv
+Phase diagram/Data/lnZ_5_VictorVersion.csv
+Phase diagram/Data/lnZ_5.csv
+Phase diagram/Data/lnZ_6_MyVersion.csv
+Phase diagram/Data/lnZ_6_VictorVersion.csv
+Phase diagram/Data/lnZ_10.csv
+Phase diagram/Data/lnZ_20.csv
+Phase diagram/Data/lnZ_50.csv
+Phase diagram/Data/lnZ_51.csv
+Phase diagram/Data/lnZ_100.csv
+Phase diagram/Data/lnZ_101.csv
+Phase diagram/Plots/Phase_len5_dif0_myVersion.png
+Phase diagram/Plots/Phase_len5_dif0.png
+Phase diagram/Plots/Phase_len5_dif1.png
+Phase diagram/Plots/Phase_len5_dif2.png
+Phase diagram/Plots/Phase_len20_dif0.png
+Phase diagram/Plots/Phase_len20_dif1.png
+Phase diagram/Plots/Phase_len20_dif2.png
+Phase diagram/Plots/Phase_len50_dif0.png
+Phase diagram/Plots/Phase_len50_dif1.png
+Phase diagram/Plots/Phase_len50_dif2.png
+Phase diagram/Plots/Phase_len51_dif0.png
+Phase diagram/Plots/Phase_len51_dif1.png
+Phase diagram/Plots/Phase_len51_dif2.png
+Phase diagram/Plots/Phase_len100_dif0.png
+Phase diagram/Plots/Phase_len100_dif1.png
+Phase diagram/Plots/Phase_len100_dif2.png
+Phase diagram/Plots/Phase_len101_dif0.png
+Phase diagram/Plots/Phase_len101_dif1.png
+Phase diagram/Plots/Phase_len101_dif2.png
+Singular values for different phases/Data/cft_I.csv
+Singular values for different phases/Data/cft_II.csv
+Singular values for different phases/Data/cft_III.csv
+Singular values for different phases/Data/cft_IV.csv
+Singular values for different phases/Data/iteration_I.csv
+Singular values for different phases/Data/iteration_II.csv
+Singular values for different phases/Data/iteration_III.csv
+Singular values for different phases/Data/iteration_IV.csv
