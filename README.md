@@ -2,7 +2,7 @@ Welcome to our repository for the Tensor Network Renormalization (TNR) project, 
 
 # 📌 Main objectives
 
-1)	Benchmark three TNR schemes: TRG, BTRG, and HOTRG, using the classical Ising model.
+1)	Benchmark three TNR schemes: TRG, BTRG, and HOTRG, using the Ising model.
 2)	Compute the phase diagram of the six-vertex model using tensor network methods.
 
 
