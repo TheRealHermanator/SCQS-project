@@ -6,7 +6,7 @@ using LaTeXStrings
 include("6VertexModel.jl")
 include("ModifiedTRGflow.jl")
 # Variables
-resolution = 1e-2
+resolution = 1e-3
 nmaxiter = 20 #since the SV's become rubbish after 25th iteration
 as = [0.25, 0.25, 1, 1.5]
 bs = [0.25, 1.5, 1, 0.25]
